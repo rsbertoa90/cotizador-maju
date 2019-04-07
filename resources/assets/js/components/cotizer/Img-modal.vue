@@ -24,8 +24,8 @@
                 <img v-if="!product.images || ! product.images.length > 0" src="/storage/images/app/no-image.png" :alt="product.name">
 
             <div class="controls"  v-if="product.images && product.images.length > 1" >
-                <span class="fa fa-chevron-left text-info" @click="changeImage('prev')" ></span>
-                <span class="fa fa-chevron-right text-info" @click="changeImage('next')" ></span>
+                <span  @click="changeImage('prev')" >  <i class="fa fa-chevron-left text-info"></i> </span>
+                <span  @click="changeImage('next')" >  <i class="fa fa-chevron-right text-info"></i> </span>
             </div>
 
           <!--   <form v-if="product.images && product.images.length > 0"  action="/admin/product/deleteImage" method="POST">
