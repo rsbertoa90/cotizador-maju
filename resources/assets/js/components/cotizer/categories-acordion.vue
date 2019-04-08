@@ -26,26 +26,24 @@
                 <div :id="'cat'+category.id" class="collapse collapsed " aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
 
-                        <products-table @show="show" v-if="selectedCategory == category.id" :products="category.products"></products-table>
+                        <products-table v-if="selectedCategory == category.id" :products="category.products"></products-table>
 
                 </div>
             </div>
         </div>
-         <image-modal @close="closedModal" v-if="this.showModal"
-                    :product="modalProduct"  ref="modal" ></image-modal>
+         
     </div>
 </template>
 
 <script>
 import productsTable from './products-table.vue';
-import imageModal from './Img-modal.vue';
+
 export default {
-    components:{imageModal,productsTable},
+    components:{productsTable},
     data(){
         return{
             selectedCategory:null,
-            showModal : true,
-            modalProduct:null,
+            
         }
     },
     computed:{
@@ -59,23 +57,7 @@ export default {
             return this.$store.getters.getConfig;
         }
     },
-    methods:{
-        show(product){
-               this.showModal = true;
-               this.modalProduct = product;
-               /* this.$refs.modal.$forceUpdate(); */
-               
-               let element = this.$refs.modal.$el;
-               $(element).modal('show');
-        },
-        closedModal(){
-                 this.modalProduct = null;
-                 this.showModal = false;
-                setTimeout(() => {
-                    this.showModal=true;
-                }, 100);
-        },
-    }
+  
 }
 </script>
 

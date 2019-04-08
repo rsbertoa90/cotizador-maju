@@ -1,4 +1,6 @@
 <template>
+<div>
+
     <table class="table table-striped table-bordered" >
             <thead class="">
                 <th>Foto</th>
@@ -63,20 +65,40 @@
                 </tr>
             </tbody>
     </table>
+    <image-modal @close="closedModal" v-if="this.showModal"
+                    :product="modalProduct"  ref="modal" ></image-modal>
+</div>
 </template>
 
 <script>
+import imageModal from './Img-modal.vue';
 export default {
     props:['products'],
+    components:{imageModal},
+    data(){return{
+         showModal : true,
+         modalProduct:null,
+    }},
     computed:{
         user(){
             return this.$store.getters.getUser;
         },
     },
     methods:{
-         show(product){
-             this.$emit('show',product);
+          show(product){
+               this.showModal = true;
+               this.modalProduct = product;
+               /* this.$refs.modal.$forceUpdate(); */
                
+               let element = this.$refs.modal.$el;
+               $(element).modal('show');
+        },
+        closedModal(){
+                 this.modalProduct = null;
+                 this.showModal = false;
+                setTimeout(() => {
+                    this.showModal=true;
+                }, 100);
         },
     }
 }
