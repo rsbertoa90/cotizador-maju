@@ -20,6 +20,7 @@
                             <pre style="white-space:normal; word-wrap: break-word;">
                                 {{$i}}
                             </pre>
+                            <br>
                         @endforeach
                     @endif
                 </pre> 
