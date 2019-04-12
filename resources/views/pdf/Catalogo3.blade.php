@@ -8,10 +8,13 @@
      
 
       @foreach ($categories as $category)
-      
-        <pre>
-            {{$category}}
-        </pre> 
+      @foreach ($category->products as $p)
+            <div style="white-space:normal;">        
+                <pre>
+                    {{$p}}
+                </pre> 
+            </div>
+        @endforeach
           
       @endforeach
   </main>
