@@ -39,9 +39,7 @@ class GenerateCatalogo implements ShouldQueue
     public function handle()
     {
      
-        if (file_exists(public_path().'/MAJU-catalogo2.pdf')){
-            unlink(public_path().'/MAJU-catalogo2.pdf');
-        }
+        
 
         $path = public_path().'/MAJU-catalogo.pdf';
         
@@ -66,7 +64,7 @@ class GenerateCatalogo implements ShouldQueue
         } */
 
 
-        $html = View::make('pdf.Catalogo3',compact('categories','today'))->render();
+        $html = View::make('pdf.Catalogo2',compact('categories','today'))->render();
 
         PDF::loadHTML($html)->save($path); 
 
