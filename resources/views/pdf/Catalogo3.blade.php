@@ -17,7 +17,7 @@
                     @endif
                     @if ($p->images && sizeof($p->images) > 0)
                         @foreach ($p->images as $i)
-                            <pre>
+                            <pre style="white-space:normal; word-wrap: break-word;">
                                 {{$i}}
                             </pre>
                         @endforeach
