@@ -39,11 +39,11 @@ class GenerateCatalogo implements ShouldQueue
     public function handle()
     {
      
-        if (file_exists(public_path().'/MAJU-catalogo.pdf')){
-            unlink(public_path().'/MAJU-catalogo.pdf');
+        if (file_exists(public_path().'/MAJU-catalogo2.pdf')){
+            unlink(public_path().'/MAJU-catalogo2.pdf');
         }
-        
-        $path = public_path().'/MAJU-catalogo2.pdf';
+
+        $path = public_path().'/MAJU-catalogo.pdf';
         
         $today = Carbon::now()->format('d/m/Y');
         $categories = Category::notPaused();

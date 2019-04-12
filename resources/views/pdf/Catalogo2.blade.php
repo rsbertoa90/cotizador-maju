@@ -2,7 +2,9 @@
 
   @section('content')
 
- 
+  @php
+      dd($categories);
+  @endphp
   <main>
       
     @if ($categories)
