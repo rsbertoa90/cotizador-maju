@@ -25,7 +25,7 @@
                         </li>
                         <li class="nav-item text-white">
                             <a class="nav-link text-white" target="_blank" rel="noreferrer"
-                                href="https://drive.google.com/file/d/1PRSqHX-70Eh7uAqOaF8xV-CAZ3BhqPL9/view">
+                                href="/MAJU-catalogo.pdf">
                                 <span class="fa fa-download"></span> Descargar catalogo digital
                             </a> 
                         </li>
