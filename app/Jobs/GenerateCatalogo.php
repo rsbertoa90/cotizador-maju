@@ -43,15 +43,16 @@ class GenerateCatalogo implements ShouldQueue
         $today = Carbon::now()->format('d/m/Y');
         $categories = Category::notPaused();
         
-        foreach ($categories as  $c) {
+       /*  foreach ($categories as  $c) {
             foreach ($c->products as $k=>$p) {
                 if (!isset($p->images[0]))
                 {
+                    
                     unset($c->products[$k]);
                     
                 }
             }
-        }
+        } */
 
 
         $html = View::make('pdf.Catalogo2',compact('categories','today'))->render();
