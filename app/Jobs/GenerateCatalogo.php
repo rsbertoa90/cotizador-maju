@@ -60,7 +60,7 @@ class GenerateCatalogo implements ShouldQueue
         } */
 
 
-        $html = View::make('pdf.Catalogo2',compact('categories','today'))->render();
+        $html = View::make('pdf.Catalogo3',compact('categories','today'))->render();
 
         PDF::loadHTML($html)->save($path); 
 
