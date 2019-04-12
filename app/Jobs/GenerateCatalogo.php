@@ -10,6 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use App\Category;
 use App\ProductImage;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use PDF;
 use View;
 use Dompdf\Dompdf;
@@ -38,8 +39,12 @@ class GenerateCatalogo implements ShouldQueue
     public function handle()
     {
      
-
-        $path = public_path().'/MAJU-catalogo.pdf';
+        if (file_exists(public_path().'/MAJU-catalogo.pdf')){
+            unlink(public_path().'/MAJU-catalogo.pdf');
+        }
+        
+        $path = public_path().'/MAJU-catalogo2.pdf';
+        
         $today = Carbon::now()->format('d/m/Y');
         $categories = Category::notPaused();
         
