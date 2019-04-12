@@ -9,9 +9,19 @@
 
       @foreach ($categories as $category)
       @foreach ($category->products as $p)
-            <div style="white-space:normal;">        
+            <div style="white-space:normal; word-wrap: break-word;">        
                 <pre>
-                    {{$p}}
+                    {{$p->name}}
+                    @if (!$p->images || sizeof($p->images) == 0)
+                        <h2>SIN FOTOS</h2>
+                    @endif
+                    @if ($p->images && sizeof($p->images) > 0)
+                        @foreach ($p->images as $i)
+                            <pre>
+                                {{$i}}
+                            </pre>
+                        @endforeach
+                    @endif
                 </pre> 
             </div>
         @endforeach
