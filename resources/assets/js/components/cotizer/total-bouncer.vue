@@ -28,7 +28,7 @@ export default {
         /* margin-left:50vw; */
         bottom: 25px;
         left: 33%;
-        z-index: 900;
+        z-index: 750;
     }
 
      @media(min-width: 600px){

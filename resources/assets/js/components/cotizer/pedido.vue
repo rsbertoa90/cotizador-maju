@@ -1,5 +1,5 @@
 <template>
-    <div v-if="list && list.length > 0" class="mt-5">
+    <div v-if="list && list.length > 0" class="mt-5 pedido-container">
         <h5>Pedido actual:</h5>
         <table class="table table-striped">
             <thead>
@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+.pedido-container{
+    padding:5px;
+    overflow-x: auto;
+}
     .table{
         font-size:0.8rem;
         margin-left: -2%;

@@ -106,6 +106,7 @@ export default {
         width: 100vw;
         height: 100vh;
         background-color: #cccc;
+        z-index:999;
     }
 
     .speech-bubble{

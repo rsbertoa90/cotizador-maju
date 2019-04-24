@@ -84,7 +84,7 @@
                    <label class="col-4 col-lg-2" for="">Mensaje</label>
                    <textarea v-model="formData.message" name="msg" class="form-control col-8 col-lg-4"></textarea>
                 </div> 
-                <button class="button btn-lg btn-outline-success offset-2 mt-2" @click.prevent.stop="send">Enviar</button>
+                <button class="button  btn-lg btn-outline-success offset-2 mt-2" @click.prevent.stop="send" style="z-index:901;">Enviar</button>
 
         </form>
             
@@ -259,5 +259,10 @@ input[type="radio"] {
 }
 .radioText{
     font-size:1.2rem;
+}
+.button{
+    z-index:850;
+    position:relative;
+    background-color: #fff;
 }
 </style>
