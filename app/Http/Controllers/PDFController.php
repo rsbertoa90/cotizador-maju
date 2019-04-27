@@ -126,6 +126,7 @@ class PDFController extends Controller
 
     public function replaceCatalogo(Request $request)
     {
+        /* comments */
         $catalogo = $request->file('catalogo');
 
         $path = public_path().'/MAJU-catalogo.pdf';
